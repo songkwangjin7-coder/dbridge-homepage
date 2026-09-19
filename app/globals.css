@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #ffffff;
+  color: #111111;
+  font-family: Arial, Helvetica, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* PC에서 기본 마우스 커서 숨김 */
+@media (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  [data-cursor-hover] {
+    cursor: none !important;
+  }
+}
+
+/* 일반 링크 / 버튼만 확대 */
+a,
+button {
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* 글자나 작은 버튼은 마우스 오버 시 확대 */
+a:hover,
+button:hover {
+  transform: scale(1.05);
+}
+
+/* 큰 카드 / 배너는 크기 유지 */
+[data-cursor-hover] {
+  transform: none !important;
+}
