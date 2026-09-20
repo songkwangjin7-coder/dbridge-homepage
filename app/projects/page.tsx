@@ -1,242 +1,106 @@
-export default function ContactPage() {
+import Link from "next/link";
+
+export default function ProjectsPage() {
   return (
-    <main className="bg-white text-[#111]">
+    <main className="min-h-screen bg-white text-[#111]">
 
-      {/* 상단 */}
-      <section className="pt-24 md:pt-32 lg:pt-40">
-        <div className="mx-auto max-w-[1600px] px-5 md:px-8 lg:px-12">
+      <section className="py-20 md:py-28 lg:py-36">
 
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-8 lg:px-12">
 
-            <div className="lg:col-span-3">
-              <p className="text-xs tracking-[4px] text-neutral-600">
-                상담문의
-              </p>
-            </div>
+          {/* 상단 */}
+          <div className="mb-16 md:mb-20">
 
-            <div className="lg:col-span-9">
+            <p className="text-xs tracking-[4px] text-neutral-500">
+              시공사례
+            </p>
 
-              {/* 모바일 제목 */}
-              <h1 className="text-[40px] font-medium leading-[1.08] tracking-[-0.05em] md:hidden">
-                새로운 공간의 시작을
-                <br />
-                DBRIDGE와
-                <br />
-                함께하세요.
-              </h1>
+            <h1 className="mt-5 text-[clamp(48px,5vw,72px)] font-medium leading-[1.05] tracking-[-0.05em]">
+              공간별 프로젝트
+            </h1>
 
-              {/* 태블릿 / PC 제목 */}
-              <h1 className="hidden text-[clamp(42px,5.5vw,78px)] font-medium leading-[1.08] tracking-[-0.05em] md:block">
-                새로운 공간의 시작을
-                <br />
-                DBRIDGE와 함께하세요.
-              </h1>
-
-              <p className="mt-8 max-w-[620px] text-sm leading-7 text-neutral-500 md:text-base">
-                프로젝트에 대한 간단한 정보를 남겨주시면
-                확인 후 상담을 도와드리겠습니다.
-              </p>
-
-            </div>
+            <p className="mt-7 text-sm leading-7 text-neutral-500 md:text-base">
+              DBRIDGE가 완성한 다양한 공간을 확인해보세요.
+            </p>
 
           </div>
 
-        </div>
-      </section>
+          {/* 공간 선택 */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
 
-      {/* 문의 폼 */}
-      <section className="py-20 md:py-28 lg:py-32">
+            {/* 주거공간 */}
+            <Link
+              href="/projects/residential"
+              data-cursor-hover
+              className="group flex min-h-[320px] flex-col justify-between bg-[#f3f3f1] p-7 md:min-h-[480px] md:p-10 lg:p-12"
+            >
 
-        <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-16 px-5 md:px-8 lg:grid-cols-12 lg:px-12">
+              <div className="flex items-start justify-between">
 
-          {/* 왼쪽 안내 */}
-          <div className="lg:col-span-3">
+                <p className="text-sm text-neutral-400">
+                  01
+                </p>
 
-            <div className="border-t border-black/20 pt-6">
-
-              <p className="text-[13px] tracking-[3px] text-neutral-500">
-                CONTACT
-              </p>
-
-              <div className="mt-10 space-y-9">
-
-                <div>
-                  <p className="text-[13px] text-neutral-500">
-                    상담 분야
-                  </p>
-
-                  <p className="mt-3 text-[15px]">
-                    주거공간 · 상업공간
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-[13px] text-neutral-500">
-                    진행 절차
-                  </p>
-
-                  <p className="mt-3 text-[15px] leading-7 text-neutral-700">
-                    문의 접수
-                    <br />
-                    상담 진행
-                    <br />
-                    현장 미팅
-                    <br />
-                    견적 및 계약
-                  </p>
-                </div>
+                <span className="text-[30px] leading-none text-neutral-500 transition-transform duration-300 group-hover:translate-x-2">
+                  →
+                </span>
 
               </div>
 
-            </div>
+              <div>
 
-          </div>
+                <p className="mb-4 text-xs tracking-[3px] text-neutral-500">
+                  RESIDENTIAL
+                </p>
 
-          {/* 오른쪽 폼 */}
-          <div className="lg:col-span-9">
+                <h2 className="text-[clamp(34px,4vw,56px)] font-medium tracking-[-0.05em] text-[#111]">
+                  주거공간
+                </h2>
 
-            <form className="grid grid-cols-1 gap-x-8 md:grid-cols-2">
+                <p className="mt-5 max-w-[400px] text-sm leading-7 text-neutral-500">
+                  10평대부터 80평대 이상까지 다양한 주거공간 시공사례를 확인해보세요.
+                </p>
 
-              <div className="border-t border-black/20 py-7">
-                <label
-                  htmlFor="name"
-                  className="block text-[13px] text-neutral-500"
-                >
-                  이름 / 업체명
-                </label>
-
-                <input
-                  id="name"
-                  type="text"
-                  placeholder="이름 또는 업체명을 입력해주세요."
-                  className="mt-4 w-full bg-transparent text-base outline-none placeholder:text-neutral-400"
-                />
               </div>
 
-              <div className="border-t border-black/20 py-7">
-                <label
-                  htmlFor="phone"
-                  className="block text-[13px] text-neutral-500"
-                >
-                  연락처
-                </label>
+            </Link>
 
-                <input
-                  id="phone"
-                  type="tel"
-                  placeholder="010-0000-0000"
-                  className="mt-4 w-full bg-transparent text-base outline-none placeholder:text-neutral-400"
-                />
+            {/* 상업공간 */}
+            <Link
+              href="/projects/commercial"
+              data-cursor-hover
+              className="group flex min-h-[320px] flex-col justify-between bg-[#111] p-7 text-white md:min-h-[480px] md:p-10 lg:p-12"
+            >
+
+              <div className="flex items-start justify-between">
+
+                <p className="text-sm text-white/40">
+                  02
+                </p>
+
+                <span className="text-[30px] leading-none text-white/60 transition-transform duration-300 group-hover:translate-x-2">
+                  →
+                </span>
+
               </div>
 
-              <div className="border-t border-black/20 py-7">
-                <label
-                  htmlFor="space"
-                  className="block text-[13px] text-neutral-500"
-                >
-                  공간 구분
-                </label>
+              <div>
 
-                <select
-                  id="space"
-                  defaultValue=""
-                  className="mt-4 w-full bg-transparent text-base text-neutral-700 outline-none"
-                >
-                  <option value="" disabled>
-                    공간을 선택해주세요.
-                  </option>
+                <p className="mb-4 text-xs tracking-[3px] text-white/40">
+                  COMMERCIAL
+                </p>
 
-                  <option value="residential">
-                    주거공간
-                  </option>
+                <h2 className="text-[clamp(34px,4vw,56px)] font-medium tracking-[-0.05em] text-white">
+                  상업공간
+                </h2>
 
-                  <option value="commercial">
-                    상업공간
-                  </option>
-                </select>
+                <p className="mt-5 max-w-[430px] text-sm leading-7 text-white/50">
+                  오피스, 카페·외식, 의료, 교육, 뷰티 등 다양한 상업공간 시공사례를 확인해보세요.
+                </p>
+
               </div>
 
-              <div className="border-t border-black/20 py-7">
-                <label
-                  htmlFor="location"
-                  className="block text-[13px] text-neutral-500"
-                >
-                  현장 지역
-                </label>
-
-                <input
-                  id="location"
-                  type="text"
-                  placeholder="예) 대전광역시"
-                  className="mt-4 w-full bg-transparent text-base outline-none placeholder:text-neutral-400"
-                />
-              </div>
-
-              <div className="border-t border-black/20 py-7">
-                <label
-                  htmlFor="area"
-                  className="block text-[13px] text-neutral-500"
-                >
-                  예상 평수
-                </label>
-
-                <input
-                  id="area"
-                  type="text"
-                  placeholder="예) 32평"
-                  className="mt-4 w-full bg-transparent text-base outline-none placeholder:text-neutral-400"
-                />
-              </div>
-
-              <div className="border-t border-black/20 py-7">
-                <label
-                  htmlFor="budget"
-                  className="block text-[13px] text-neutral-500"
-                >
-                  예상 예산
-                </label>
-
-                <input
-                  id="budget"
-                  type="text"
-                  placeholder="예) 5,000만원"
-                  className="mt-4 w-full bg-transparent text-base outline-none placeholder:text-neutral-400"
-                />
-              </div>
-
-              <div className="border-y border-black/20 py-7 md:col-span-2">
-                <label
-                  htmlFor="message"
-                  className="block text-[13px] text-neutral-500"
-                >
-                  문의 내용
-                </label>
-
-                <textarea
-                  id="message"
-                  rows={7}
-                  placeholder="프로젝트에 대해 자유롭게 작성해주세요."
-                  className="mt-4 w-full resize-none bg-transparent text-base leading-7 outline-none placeholder:text-neutral-400"
-                />
-              </div>
-
-              <div className="mt-10 md:col-span-2">
-                <button
-                  type="button"
-                  data-cursor-hover
-                  className="flex w-full items-center justify-between bg-[#111] px-7 py-6 text-left text-white md:px-9"
-                >
-                  <span className="text-base">
-                    상담문의 보내기
-                  </span>
-
-                  <span className="text-xl">
-                    →
-                  </span>
-                </button>
-              </div>
-
-            </form>
+            </Link>
 
           </div>
 

@@ -16,7 +16,17 @@ export default function ContactPage() {
 
             <div className="lg:col-span-9">
 
-              <h1 className="text-[clamp(42px,5.5vw,78px)] font-medium leading-[1.08] tracking-[-0.05em]">
+              {/* 모바일 제목 */}
+              <h1 className="text-[40px] font-medium leading-[1.08] tracking-[-0.05em] md:hidden">
+                새로운 공간의 시작을
+                <br />
+                DBRIDGE와
+                <br />
+                함께하세요.
+              </h1>
+
+              {/* PC 제목 */}
+              <h1 className="hidden text-[clamp(42px,5.5vw,78px)] font-medium leading-[1.08] tracking-[-0.05em] md:block">
                 새로운 공간의 시작을
                 <br />
                 DBRIDGE와 함께하세요.
@@ -39,7 +49,7 @@ export default function ContactPage() {
 
         <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-16 px-5 md:px-8 lg:grid-cols-12 lg:px-12">
 
-          {/* 왼쪽 안내 */}
+          {/* 왼쪽 */}
           <div className="lg:col-span-3">
 
             <div className="border-t border-black/20 pt-6">
@@ -51,7 +61,6 @@ export default function ContactPage() {
               <div className="mt-10 space-y-9">
 
                 <div>
-
                   <p className="text-[13px] text-neutral-500">
                     상담 분야
                   </p>
@@ -59,11 +68,9 @@ export default function ContactPage() {
                   <p className="mt-3 text-[15px]">
                     주거공간 · 상업공간
                   </p>
-
                 </div>
 
                 <div>
-
                   <p className="text-[13px] text-neutral-500">
                     진행 절차
                   </p>
@@ -77,7 +84,6 @@ export default function ContactPage() {
                     <br />
                     견적 및 계약
                   </p>
-
                 </div>
 
               </div>
@@ -86,63 +92,43 @@ export default function ContactPage() {
 
           </div>
 
-          {/* 오른쪽 폼 */}
+          {/* 폼 */}
           <div className="lg:col-span-9">
 
             <form className="grid grid-cols-1 gap-x-8 md:grid-cols-2">
 
-              {/* 이름 */}
               <div className="border-t border-black/20 py-7">
-
-                <label
-                  htmlFor="name"
-                  className="block text-[13px] text-neutral-500"
-                >
+                <label className="block text-[13px] text-neutral-500">
                   이름 / 업체명
                 </label>
 
                 <input
-                  id="name"
                   type="text"
                   placeholder="이름 또는 업체명을 입력해주세요."
                   className="mt-4 w-full bg-transparent text-base outline-none placeholder:text-neutral-400"
                 />
-
               </div>
 
-              {/* 연락처 */}
               <div className="border-t border-black/20 py-7">
-
-                <label
-                  htmlFor="phone"
-                  className="block text-[13px] text-neutral-500"
-                >
+                <label className="block text-[13px] text-neutral-500">
                   연락처
                 </label>
 
                 <input
-                  id="phone"
                   type="tel"
                   placeholder="010-0000-0000"
                   className="mt-4 w-full bg-transparent text-base outline-none placeholder:text-neutral-400"
                 />
-
               </div>
 
-              {/* 공간 구분 */}
               <div className="border-t border-black/20 py-7">
-
-                <label
-                  htmlFor="space"
-                  className="block text-[13px] text-neutral-500"
-                >
+                <label className="block text-[13px] text-neutral-500">
                   공간 구분
                 </label>
 
                 <select
-                  id="space"
                   defaultValue=""
-                  className="mt-4 w-full bg-transparent text-base outline-none text-neutral-700"
+                  className="mt-4 w-full bg-transparent text-base text-neutral-700 outline-none"
                 >
                   <option value="" disabled>
                     공간을 선택해주세요.
@@ -156,102 +142,65 @@ export default function ContactPage() {
                     상업공간
                   </option>
                 </select>
-
               </div>
 
-              {/* 현장 지역 */}
               <div className="border-t border-black/20 py-7">
-
-                <label
-                  htmlFor="location"
-                  className="block text-[13px] text-neutral-500"
-                >
+                <label className="block text-[13px] text-neutral-500">
                   현장 지역
                 </label>
 
                 <input
-                  id="location"
                   type="text"
                   placeholder="예) 대전광역시"
                   className="mt-4 w-full bg-transparent text-base outline-none placeholder:text-neutral-400"
                 />
-
               </div>
 
-              {/* 평수 */}
               <div className="border-t border-black/20 py-7">
-
-                <label
-                  htmlFor="area"
-                  className="block text-[13px] text-neutral-500"
-                >
+                <label className="block text-[13px] text-neutral-500">
                   예상 평수
                 </label>
 
                 <input
-                  id="area"
                   type="text"
                   placeholder="예) 32평"
                   className="mt-4 w-full bg-transparent text-base outline-none placeholder:text-neutral-400"
                 />
-
               </div>
 
-              {/* 예산 */}
               <div className="border-t border-black/20 py-7">
-
-                <label
-                  htmlFor="budget"
-                  className="block text-[13px] text-neutral-500"
-                >
+                <label className="block text-[13px] text-neutral-500">
                   예상 예산
                 </label>
 
                 <input
-                  id="budget"
                   type="text"
                   placeholder="예) 5,000만원"
                   className="mt-4 w-full bg-transparent text-base outline-none placeholder:text-neutral-400"
                 />
-
               </div>
 
-              {/* 문의 내용 */}
               <div className="border-y border-black/20 py-7 md:col-span-2">
-
-                <label
-                  htmlFor="message"
-                  className="block text-[13px] text-neutral-500"
-                >
+                <label className="block text-[13px] text-neutral-500">
                   문의 내용
                 </label>
 
                 <textarea
-                  id="message"
                   rows={7}
                   placeholder="프로젝트에 대해 자유롭게 작성해주세요."
                   className="mt-4 w-full resize-none bg-transparent text-base leading-7 outline-none placeholder:text-neutral-400"
                 />
-
               </div>
 
-              {/* 버튼 */}
               <div className="mt-10 md:col-span-2">
-
                 <button
                   type="button"
                   data-cursor-hover
                   className="flex w-full items-center justify-between bg-[#111] px-7 py-6 text-left text-white md:px-9"
                 >
-                  <span className="text-base">
-                    상담문의 보내기
-                  </span>
-
-                  <span className="text-xl">
-                    →
-                  </span>
+                  <span>상담문의 보내기</span>
+                  <span className="text-xl">→</span>
                 </button>
-
               </div>
 
             </form>
