@@ -30,53 +30,58 @@ export default function Home() {
     <main className="bg-white text-[#111]">
 
       {/* 메인 비주얼 */}
-      <section className="min-h-[calc(100vh-108px)] bg-[#f3f3f1]">
-        <div className="mx-auto grid min-h-[calc(100vh-108px)] max-w-[1600px] grid-cols-1 px-5 md:px-8 lg:grid-cols-12 lg:px-12">
+      <section className="bg-[#f3f3f1] lg:min-h-[calc(100vh-108px)]">
+        <div className="mx-auto grid max-w-[1600px] grid-cols-1 px-5 md:px-8 lg:min-h-[calc(100vh-108px)] lg:grid-cols-12 lg:px-12">
 
-          <div className="flex flex-col justify-between py-14 lg:col-span-6 lg:py-16">
+          {/* 왼쪽 */}
+          <div className="flex flex-col py-10 md:py-14 lg:col-span-6 lg:justify-between lg:py-16">
 
-            <p className="text-xs tracking-[4px] text-neutral-500">
+            <p className="text-[11px] tracking-[4px] text-neutral-500 md:text-xs">
               DBRIDGE INTERIOR
             </p>
 
-            <div className="py-16 lg:py-0">
-              <h1 className="text-[clamp(46px,6.2vw,96px)] font-medium leading-[0.98] tracking-[-0.055em]">
+            <div className="my-14 md:my-16 lg:my-0">
+              <h1 className="text-[44px] font-medium leading-[0.95] tracking-[-0.055em] md:text-[64px] lg:text-[clamp(46px,6.2vw,96px)]">
                 공간의 가치를
                 <br />
                 디자인합니다.
               </h1>
 
-              <p className="mt-8 max-w-[500px] text-sm leading-7 text-neutral-600">
+              <p className="mt-7 text-[13px] leading-6 text-neutral-600 md:mt-8 md:text-sm md:leading-7">
                 공간의 목적과 사람의 경험을 이해하고,
                 <br />
                 디자인부터 시공까지 완성도 높은 공간을 만듭니다.
               </p>
             </div>
 
-            <div className="flex items-end justify-between border-t border-black/20 pt-5">
-              <p className="text-xs text-neutral-500">
+            <div className="flex items-end justify-between border-t border-black/20 pt-4 md:pt-5">
+              <p className="text-[10px] text-neutral-500 md:text-xs">
                 INTERIOR DESIGN & CONSTRUCTION
               </p>
 
-              <p className="text-xs text-neutral-400">
+              <p className="text-[10px] text-neutral-400 md:text-xs">
                 SCROLL ↓
               </p>
             </div>
 
           </div>
 
-          <div className="pb-10 lg:col-span-6 lg:py-12 lg:pl-10">
-            <div className="relative h-[420px] overflow-hidden md:h-[540px] lg:h-full lg:min-h-[620px]">
+          {/* 오른쪽 이미지 */}
+          <div className="pb-6 md:pb-10 lg:col-span-6 lg:py-12 lg:pl-10">
+
+            <div className="relative aspect-[4/5] overflow-hidden md:h-[540px] md:aspect-auto lg:h-full lg:min-h-[620px]">
 
               <Image
                 src="/images/main-hero.png"
                 alt="DBRIDGE 인테리어"
                 fill
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
 
             </div>
+
           </div>
 
         </div>
@@ -113,6 +118,7 @@ export default function Home() {
                   src="/images/main-hero.png"
                   alt="DBRIDGE 공간 디자인"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 60vw"
                   className="object-cover"
                 />
 
@@ -136,10 +142,13 @@ export default function Home() {
 
           </div>
 
+          {/* 회사소개 3개 박스 */}
           <div className="mt-20 grid grid-cols-1 border-t border-black/20 md:grid-cols-3">
 
             <div className="border-b border-black/20 py-10 md:border-r md:p-10 lg:p-12">
-              <p className="text-sm text-neutral-500">01</p>
+              <p className="text-sm text-neutral-500">
+                01
+              </p>
 
               <p className="mt-12 text-[13px] tracking-[3px] text-neutral-500">
                 DESIGN
@@ -156,7 +165,9 @@ export default function Home() {
             </div>
 
             <div className="border-b border-black/20 py-10 md:border-r md:p-10 lg:p-12">
-              <p className="text-sm text-neutral-500">02</p>
+              <p className="text-sm text-neutral-500">
+                02
+              </p>
 
               <p className="mt-12 text-[13px] tracking-[3px] text-neutral-500">
                 CONSTRUCTION
@@ -173,7 +184,9 @@ export default function Home() {
             </div>
 
             <div className="border-b border-black/20 py-10 md:p-10 lg:p-12">
-              <p className="text-sm text-neutral-500">03</p>
+              <p className="text-sm text-neutral-500">
+                03
+              </p>
 
               <p className="mt-12 text-[13px] tracking-[3px] text-neutral-500">
                 SPACE
@@ -228,12 +241,15 @@ export default function Home() {
                   src="/images/main-hero.png"
                   alt="인테리어 디자인"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 />
               </div>
 
               <div className="mt-6 border-t border-black/20 pt-6">
-                <p className="text-sm text-neutral-500">01</p>
+                <p className="text-sm text-neutral-500">
+                  01
+                </p>
 
                 <h3 className="mt-4 text-[28px] font-medium tracking-[-0.04em]">
                   인테리어 디자인
@@ -254,12 +270,15 @@ export default function Home() {
                   src="/images/main-hero.png"
                   alt="인테리어 시공"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 />
               </div>
 
               <div className="mt-6 border-t border-black/20 pt-6">
-                <p className="text-sm text-neutral-500">02</p>
+                <p className="text-sm text-neutral-500">
+                  02
+                </p>
 
                 <h3 className="mt-4 text-[28px] font-medium tracking-[-0.04em]">
                   인테리어 시공
@@ -359,6 +378,7 @@ export default function Home() {
 
       {/* 상담문의 CTA */}
       <section className="bg-[#111] text-white">
+
         <div className="mx-auto max-w-[1600px] px-5 py-24 md:px-8 md:py-32 lg:px-12 lg:py-40">
 
           <p className="text-xs tracking-[4px] text-white/40">
