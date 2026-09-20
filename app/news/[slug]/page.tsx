@@ -5,6 +5,13 @@ const newsData = {
   "residential-project": {
     category: "PROJECT",
     title: "새로운 주거공간 프로젝트",
+    mobileTitle: (
+      <>
+        새로운 주거공간
+        <br />
+        프로젝트
+      </>
+    ),
     date: "2026.09.20",
     description:
       "DBRIDGE가 새롭게 완성한 주거공간 프로젝트를 소개합니다. 공간의 구조와 사용자의 생활 방식을 고려하여 편안함과 실용성을 함께 담았습니다.",
@@ -13,6 +20,13 @@ const newsData = {
   "commercial-site": {
     category: "SITE",
     title: "상업공간 시공 현장",
+    mobileTitle: (
+      <>
+        상업공간
+        <br />
+        시공 현장
+      </>
+    ),
     date: "2026.09.15",
     description:
       "현재 진행 중인 DBRIDGE 상업공간 시공 현장을 소개합니다. 디자인 의도를 현장에 정확하게 구현하기 위해 세부 공정과 마감까지 꼼꼼하게 진행하고 있습니다.",
@@ -21,6 +35,13 @@ const newsData = {
   "dbridge-news": {
     category: "DBRIDGE",
     title: "DBRIDGE의 새로운 소식",
+    mobileTitle: (
+      <>
+        DBRIDGE의
+        <br />
+        새로운 소식
+      </>
+    ),
     date: "2026.09.10",
     description:
       "공간의 새로운 가치를 만들어가는 DBRIDGE의 다양한 이야기와 새로운 소식을 전합니다.",
@@ -50,18 +71,21 @@ export default async function NewsDetail({
 
         <div className="mx-auto max-w-[1400px] px-5 md:px-8 lg:px-12">
 
-          {/* 제목 영역 */}
           <div className="relative">
 
-            {/* 카테고리 */}
             <p className="mb-8 text-xs tracking-[3px] text-neutral-500 lg:absolute lg:left-0 lg:top-4 lg:mb-0">
               {news.category}
             </p>
 
-            {/* 제목 + 날짜 중앙 정렬 */}
             <div className="text-center">
 
-              <h1 className="mx-auto max-w-[1100px] text-[clamp(46px,5.5vw,82px)] font-medium leading-[1.05] tracking-[-0.05em]">
+              {/* 모바일 제목 */}
+              <h1 className="text-[40px] font-medium leading-[1.05] tracking-[-0.05em] md:hidden">
+                {news.mobileTitle}
+              </h1>
+
+              {/* 태블릿 / PC 제목 */}
+              <h1 className="mx-auto hidden max-w-[1100px] text-[clamp(46px,5.5vw,82px)] font-medium leading-[1.05] tracking-[-0.05em] md:block">
                 {news.title}
               </h1>
 
@@ -93,14 +117,12 @@ export default async function NewsDetail({
 
           <div className="grid grid-cols-1 lg:grid-cols-12">
 
-            {/* 본문 전체 중앙 배치 */}
             <div className="lg:col-start-3 lg:col-span-8">
 
               <p className="text-base leading-8 text-neutral-600 md:text-lg md:leading-9">
                 {news.description}
               </p>
 
-              {/* 본문 이미지 */}
               <div className="mt-14 aspect-[16/9] bg-[#f1f1ef]">
 
                 <div className="flex h-full items-center justify-center text-sm text-neutral-400">
@@ -109,7 +131,6 @@ export default async function NewsDetail({
 
               </div>
 
-              {/* 목록으로 */}
               <div className="mt-14 border-t border-black/20 pt-7">
 
                 <Link

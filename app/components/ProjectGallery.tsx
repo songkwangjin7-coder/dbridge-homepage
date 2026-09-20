@@ -16,127 +16,96 @@ export default function ProjectGallery({
     (_, index) => index + 1
   );
 
-  const previousSlide = () => {
+  const prevImage = () => {
     setCurrent((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
+      prev === 0 ? imageCount - 1 : prev - 1
     );
   };
 
-  const nextSlide = () => {
+  const nextImage = () => {
     setCurrent((prev) =>
-      prev === images.length - 1 ? 0 : prev + 1
+      prev === imageCount - 1 ? 0 : prev + 1
     );
   };
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) =>
-        prev === images.length - 1 ? 0 : prev + 1
+        prev === imageCount - 1 ? 0 : prev + 1
       );
     }, 4000);
 
     return () => clearInterval(timer);
-  }, [images.length]);
+  }, [imageCount]);
 
   return (
-    <div className="mt-10">
+    <div className="w-full">
 
-      {/* 대표 이미지 */}
-      <div className="relative overflow-hidden bg-[#f1f1ef]">
+      {/* 메인 이미지 */}
+      <div className="relative aspect-[16/10] overflow-hidden bg-[#f1f1ef] md:aspect-[16/7]">
 
-        <div className="aspect-[16/7]">
-          <div className="flex h-full items-center justify-center text-sm text-neutral-400">
-            프로젝트 이미지 {images[current]}
-          </div>
+        <div className="flex h-full items-center justify-center text-sm text-neutral-400">
+          프로젝트 이미지 {current + 1}
         </div>
 
         {/* 이전 */}
         <button
-          onClick={previousSlide}
+          type="button"
+          onClick={prevImage}
+          data-cursor-hover
           aria-label="이전 이미지"
-          className="
-            absolute
-            left-5
-            top-1/2
-            flex
-            h-12
-            w-12
-            -translate-y-1/2
-            items-center
-            justify-center
-            rounded-full
-            bg-white/80
-            text-2xl
-            backdrop-blur
-            transition
-            hover:bg-white
-          "
+          className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-lg shadow-sm md:left-5 md:h-12 md:w-12 md:text-xl"
         >
           ‹
         </button>
 
         {/* 다음 */}
         <button
-          onClick={nextSlide}
+          type="button"
+          onClick={nextImage}
+          data-cursor-hover
           aria-label="다음 이미지"
-          className="
-            absolute
-            right-5
-            top-1/2
-            flex
-            h-12
-            w-12
-            -translate-y-1/2
-            items-center
-            justify-center
-            rounded-full
-            bg-white/80
-            text-2xl
-            backdrop-blur
-            transition
-            hover:bg-white
-          "
+          className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-lg shadow-sm md:right-5 md:h-12 md:w-12 md:text-xl"
         >
           ›
         </button>
 
-        {/* 페이지 표시 */}
-        <div className="absolute bottom-5 right-5 rounded-full bg-black/70 px-4 py-2 text-xs text-white">
+        {/* 현재 페이지 */}
+        <div className="absolute bottom-4 right-4 rounded-full bg-black/70 px-4 py-2 text-xs text-white md:bottom-5 md:right-5">
           {String(current + 1).padStart(2, "0")} /{" "}
-          {String(images.length).padStart(2, "0")}
+          {String(imageCount).padStart(2, "0")}
         </div>
 
       </div>
 
-      {/* 상세 이미지 썸네일 */}
-      <div className="mt-5 flex gap-3 overflow-x-auto pb-2">
+      {/* 썸네일 */}
+      <div className="mt-4 flex gap-3 overflow-x-auto pb-2">
 
         {images.map((image, index) => (
           <button
             key={image}
+            type="button"
             onClick={() => setCurrent(index)}
-            className={`
-              relative
-              aspect-[4/3]
-              min-w-[160px]
-              overflow-hidden
-              bg-[#f1f1ef]
-              transition-opacity
-              md:min-w-[190px]
-              ${
-                current === index
-                  ? "opacity-100"
-                  : "opacity-50 hover:opacity-80"
-              }
-            `}
+            data-cursor-hover
+            className={`relative min-w-[calc(50%-6px)] overflow-hidden bg-[#f1f1ef] md:min-w-[190px] ${
+              current === index
+                ? "opacity-100"
+                : "opacity-60"
+            }`}
           >
-            <div className="flex h-full items-center justify-center text-xs text-neutral-400">
-              이미지 {image}
+
+            <div className="aspect-[4/3]">
+
+              <div className="flex h-full items-center justify-center text-xs text-neutral-400">
+                이미지 {image}
+              </div>
+
             </div>
 
             {current === index && (
-              <div className="absolute inset-x-0 bottom-0 h-[3px] bg-black" />
+              <div className="absolute bottom-0 left-0 h-[3px] w-full bg-black" />
             )}
+
           </button>
         ))}
 

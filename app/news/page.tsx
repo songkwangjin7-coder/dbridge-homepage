@@ -34,10 +34,11 @@ export default function NewsPage() {
   return (
     <main className="bg-white text-[#111]">
 
-      {/* 상단 */}
-      <section className="pt-24 md:pt-32 lg:pt-40">
-        <div className="mx-auto max-w-[1600px] px-5 md:px-8 lg:px-12">
+      <section className="py-20 md:py-28 lg:py-36">
 
+        <div className="mx-auto max-w-[1400px] px-5 md:px-8 lg:px-12">
+
+          {/* 상단 */}
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
 
             <div className="lg:col-span-3">
@@ -47,39 +48,44 @@ export default function NewsPage() {
             </div>
 
             <div className="lg:col-span-9">
-              <h1 className="text-[clamp(42px,5.5vw,78px)] font-medium leading-[1.08] tracking-[-0.05em]">
+
+              {/* 모바일 */}
+              <h1 className="text-[40px] font-medium leading-[1.05] tracking-[-0.05em] md:hidden">
+                DBRIDGE의
+                <br />
+                새로운 이야기를
+                <br />
+                전합니다.
+              </h1>
+
+              {/* 태블릿 / PC */}
+              <h1 className="hidden text-[clamp(48px,5vw,76px)] font-medium leading-[1.08] tracking-[-0.05em] md:block">
                 DBRIDGE의
                 <br />
                 새로운 이야기를 전합니다.
               </h1>
 
-              <p className="mt-8 max-w-[600px] text-sm leading-7 text-neutral-500 md:text-base">
-                새로운 프로젝트와 시공 현장,
-                DBRIDGE의 다양한 소식을 확인해보세요.
+              <p className="mt-8 max-w-[650px] text-sm leading-7 text-neutral-500 md:text-base">
+                새로운 프로젝트와 시공 현장, DBRIDGE의 다양한 소식을
+                확인해보세요.
               </p>
+
             </div>
 
           </div>
 
-        </div>
-      </section>
-
-      {/* 소식 목록 */}
-      <section className="py-20 md:py-28 lg:py-32">
-        <div className="mx-auto max-w-[1600px] px-5 md:px-8 lg:px-12">
-
-          <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+          {/* 뉴스 목록 */}
+          <div className="mt-20 grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-3">
 
             {news.map((item) => (
               <Link
                 key={item.slug}
                 href={`/news/${item.slug}`}
                 data-cursor-hover
-                className="group block"
+                className="group block border-t border-black/20 pt-6"
               >
 
-                {/* 상단 정보 */}
-                <div className="flex items-center justify-between border-t border-black/20 pt-5">
+                <div className="flex items-center justify-between">
 
                   <p className="text-xs text-neutral-400">
                     {item.number}
@@ -91,8 +97,7 @@ export default function NewsPage() {
 
                 </div>
 
-                {/* 이미지 */}
-                <div className="mt-6 aspect-[4/3] overflow-hidden bg-[#f1f1ef]">
+                <div className="mt-6 aspect-[4/3] bg-[#f1f1ef]">
 
                   <div className="flex h-full items-center justify-center text-xs text-neutral-400">
                     소식 이미지
@@ -100,28 +105,23 @@ export default function NewsPage() {
 
                 </div>
 
-                {/* 텍스트 */}
-                <div className="mt-6">
+                <h2 className="mt-6 text-[24px] font-medium tracking-[-0.03em]">
+                  {item.title}
+                </h2>
 
-                  <h2 className="text-2xl font-medium tracking-[-0.035em] lg:text-[28px]">
-                    {item.title}
-                  </h2>
+                <p className="mt-4 text-[15px] leading-7 text-neutral-500">
+                  {item.description}
+                </p>
 
-                  <p className="mt-4 max-w-[420px] text-sm leading-7 text-neutral-500">
-                    {item.description}
+                <div className="mt-8 flex items-center justify-between">
+
+                  <p className="text-xs text-neutral-400">
+                    {item.date}
                   </p>
 
-                  <div className="mt-8 flex items-center justify-between">
-
-                    <p className="text-xs text-neutral-400">
-                      {item.date}
-                    </p>
-
-                    <span className="text-sm">
-                      →
-                    </span>
-
-                  </div>
+                  <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
 
                 </div>
 
@@ -131,6 +131,7 @@ export default function NewsPage() {
           </div>
 
         </div>
+
       </section>
 
     </main>
