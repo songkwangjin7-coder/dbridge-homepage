@@ -44,7 +44,7 @@ export default function ResidentialPage() {
                 href={`/projects/residential/${category.slug}`}
                 data-cursor-hover
                 className={[
-                  "group flex min-h-[190px] flex-col justify-between border-b border-black/20 p-7 md:min-h-[220px] md:p-9 lg:p-10",
+                  "group flex min-h-[160px] flex-col justify-between border-b border-black/20 p-6 md:min-h-[220px] md:p-9 lg:p-10",
                   index % 2 === 0 ? "md:border-r" : "",
                 ].join(" ")}
               >
@@ -59,7 +59,7 @@ export default function ResidentialPage() {
                     {category.name}
                   </h2>
 
-                  <span className="text-lg text-neutral-400 transition-transform duration-300 group-hover:translate-x-1">
+                  <span className="text-[30px] leading-none text-neutral-500 transition-transform duration-300 group-hover:translate-x-2">
                     →
                   </span>
 
