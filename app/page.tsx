@@ -33,7 +33,6 @@ export default function Home() {
       <section className="bg-[#f3f3f1] lg:min-h-[calc(100vh-108px)]">
         <div className="mx-auto grid max-w-[1600px] grid-cols-1 px-5 md:px-8 lg:min-h-[calc(100vh-108px)] lg:grid-cols-12 lg:px-12">
 
-          {/* 왼쪽 */}
           <div className="flex flex-col py-10 md:py-14 lg:col-span-6 lg:justify-between lg:py-16">
 
             <p className="text-[11px] tracking-[4px] text-neutral-500 md:text-xs">
@@ -66,9 +65,7 @@ export default function Home() {
 
           </div>
 
-          {/* 오른쪽 이미지 */}
           <div className="pb-6 md:pb-10 lg:col-span-6 lg:py-12 lg:pl-10">
-
             <div className="relative aspect-[4/5] overflow-hidden md:h-[540px] md:aspect-auto lg:h-full lg:min-h-[620px]">
 
               <Image
@@ -81,7 +78,6 @@ export default function Home() {
               />
 
             </div>
-
           </div>
 
         </div>
@@ -143,63 +139,69 @@ export default function Home() {
           </div>
 
           {/* 회사소개 3개 박스 */}
-          <div className="mt-20 grid grid-cols-1 border-t border-black/20 md:grid-cols-3">
+          <div className="mt-16 grid grid-cols-1 border-t border-black/20 md:mt-20 md:grid-cols-3">
 
-            <div className="border-b border-black/20 py-10 md:border-r md:p-10 lg:p-12">
+            <div className="border-b border-black/20 py-8 md:border-r md:p-10 lg:p-12">
+
               <p className="text-sm text-neutral-500">
                 01
               </p>
 
-              <p className="mt-12 text-[13px] tracking-[3px] text-neutral-500">
+              <p className="mt-8 text-[13px] tracking-[3px] text-neutral-500 md:mt-12">
                 DESIGN
               </p>
 
-              <h3 className="mt-4 text-[26px] font-medium tracking-[-0.03em]">
+              <h3 className="mt-3 text-[24px] font-medium tracking-[-0.03em] md:mt-4 md:text-[26px]">
                 목적에서 시작하는 디자인
               </h3>
 
-              <p className="mt-5 max-w-[350px] text-[15px] leading-7 text-neutral-500">
+              <p className="mt-4 max-w-[350px] text-[15px] leading-7 text-neutral-500 md:mt-5">
                 공간의 용도와 사용자의 동선을 고려해
                 가장 적합한 디자인 방향을 제안합니다.
               </p>
+
             </div>
 
-            <div className="border-b border-black/20 py-10 md:border-r md:p-10 lg:p-12">
+            <div className="border-b border-black/20 py-8 md:border-r md:p-10 lg:p-12">
+
               <p className="text-sm text-neutral-500">
                 02
               </p>
 
-              <p className="mt-12 text-[13px] tracking-[3px] text-neutral-500">
+              <p className="mt-8 text-[13px] tracking-[3px] text-neutral-500 md:mt-12">
                 CONSTRUCTION
               </p>
 
-              <h3 className="mt-4 text-[26px] font-medium tracking-[-0.03em]">
+              <h3 className="mt-3 text-[24px] font-medium tracking-[-0.03em] md:mt-4 md:text-[26px]">
                 완성도를 높이는 시공
               </h3>
 
-              <p className="mt-5 max-w-[350px] text-[15px] leading-7 text-neutral-500">
+              <p className="mt-4 max-w-[350px] text-[15px] leading-7 text-neutral-500 md:mt-5">
                 설계부터 현장 관리와 마감까지
                 체계적인 과정으로 공간을 완성합니다.
               </p>
+
             </div>
 
-            <div className="border-b border-black/20 py-10 md:p-10 lg:p-12">
+            <div className="border-b border-black/20 py-8 md:p-10 lg:p-12">
+
               <p className="text-sm text-neutral-500">
                 03
               </p>
 
-              <p className="mt-12 text-[13px] tracking-[3px] text-neutral-500">
+              <p className="mt-8 text-[13px] tracking-[3px] text-neutral-500 md:mt-12">
                 SPACE
               </p>
 
-              <h3 className="mt-4 text-[26px] font-medium tracking-[-0.03em]">
+              <h3 className="mt-3 text-[24px] font-medium tracking-[-0.03em] md:mt-4 md:text-[26px]">
                 공간에 맞는 새로운 가치
               </h3>
 
-              <p className="mt-5 max-w-[350px] text-[15px] leading-7 text-neutral-500">
+              <p className="mt-4 max-w-[350px] text-[15px] leading-7 text-neutral-500 md:mt-5">
                 주거부터 상업공간까지 각 공간의 특성을 살려
                 새로운 경험과 가치를 만들어갑니다.
               </p>
+
             </div>
 
           </div>
@@ -210,11 +212,11 @@ export default function Home() {
       {/* 사업분야 */}
       <section
         id="business"
-        className="bg-[#f5f5f3] py-24 md:py-32 lg:py-40"
+        className="bg-[#f5f5f3] py-20 md:py-32 lg:py-40"
       >
         <div className="mx-auto max-w-[1600px] px-5 md:px-8 lg:px-12">
 
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
 
             <div className="lg:col-span-3">
               <p className="text-xs tracking-[4px] text-neutral-600">
@@ -223,16 +225,28 @@ export default function Home() {
             </div>
 
             <div className="lg:col-span-9">
-              <h2 className="text-[clamp(36px,4.6vw,68px)] font-medium leading-[1.1] tracking-[-0.045em]">
+
+              {/* 모바일 */}
+              <h2 className="text-[34px] font-medium leading-[1.08] tracking-[-0.045em] md:hidden">
+                디자인부터 시공까지,
+                <br />
+                하나의 흐름으로
+                <br />
+                완성합니다.
+              </h2>
+
+              {/* 태블릿 / PC */}
+              <h2 className="hidden text-[clamp(36px,4.6vw,68px)] font-medium leading-[1.1] tracking-[-0.045em] md:block">
                 디자인부터 시공까지,
                 <br />
                 하나의 흐름으로 완성합니다.
               </h2>
+
             </div>
 
           </div>
 
-          <div className="mt-20 grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="mt-14 grid grid-cols-1 gap-8 md:mt-20 md:grid-cols-2">
 
             <div data-cursor-hover className="group">
 
