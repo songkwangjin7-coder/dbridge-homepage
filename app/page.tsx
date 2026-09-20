@@ -67,6 +67,7 @@ export default function Home() {
 
           <div className="pb-10 lg:col-span-6 lg:py-12 lg:pl-10">
             <div className="relative h-[420px] overflow-hidden md:h-[540px] lg:h-full lg:min-h-[620px]">
+
               <Image
                 src="/images/main-hero.png"
                 alt="DBRIDGE 인테리어"
@@ -74,6 +75,7 @@ export default function Home() {
                 priority
                 className="object-cover"
               />
+
             </div>
           </div>
 
@@ -106,12 +108,14 @@ export default function Home() {
 
             <div className="lg:col-span-7">
               <div className="relative aspect-[16/10] overflow-hidden bg-[#f1f1ef]">
+
                 <Image
                   src="/images/main-hero.png"
                   alt="DBRIDGE 공간 디자인"
                   fill
                   className="object-cover"
                 />
+
               </div>
             </div>
 
@@ -135,51 +139,51 @@ export default function Home() {
           <div className="mt-20 grid grid-cols-1 border-t border-black/20 md:grid-cols-3">
 
             <div className="border-b border-black/20 py-10 md:border-r md:p-10 lg:p-12">
-              <p className="text-xs text-neutral-400">01</p>
+              <p className="text-sm text-neutral-500">01</p>
 
-              <p className="mt-12 text-xs tracking-[3px] text-neutral-400">
+              <p className="mt-12 text-[13px] tracking-[3px] text-neutral-500">
                 DESIGN
               </p>
 
-              <h3 className="mt-4 text-2xl font-medium tracking-[-0.03em]">
+              <h3 className="mt-4 text-[26px] font-medium tracking-[-0.03em]">
                 목적에서 시작하는 디자인
               </h3>
 
-              <p className="mt-5 max-w-[350px] text-sm leading-7 text-neutral-500">
+              <p className="mt-5 max-w-[350px] text-[15px] leading-7 text-neutral-500">
                 공간의 용도와 사용자의 동선을 고려해
                 가장 적합한 디자인 방향을 제안합니다.
               </p>
             </div>
 
             <div className="border-b border-black/20 py-10 md:border-r md:p-10 lg:p-12">
-              <p className="text-xs text-neutral-400">02</p>
+              <p className="text-sm text-neutral-500">02</p>
 
-              <p className="mt-12 text-xs tracking-[3px] text-neutral-400">
+              <p className="mt-12 text-[13px] tracking-[3px] text-neutral-500">
                 CONSTRUCTION
               </p>
 
-              <h3 className="mt-4 text-2xl font-medium tracking-[-0.03em]">
+              <h3 className="mt-4 text-[26px] font-medium tracking-[-0.03em]">
                 완성도를 높이는 시공
               </h3>
 
-              <p className="mt-5 max-w-[350px] text-sm leading-7 text-neutral-500">
+              <p className="mt-5 max-w-[350px] text-[15px] leading-7 text-neutral-500">
                 설계부터 현장 관리와 마감까지
                 체계적인 과정으로 공간을 완성합니다.
               </p>
             </div>
 
             <div className="border-b border-black/20 py-10 md:p-10 lg:p-12">
-              <p className="text-xs text-neutral-400">03</p>
+              <p className="text-sm text-neutral-500">03</p>
 
-              <p className="mt-12 text-xs tracking-[3px] text-neutral-400">
+              <p className="mt-12 text-[13px] tracking-[3px] text-neutral-500">
                 SPACE
               </p>
 
-              <h3 className="mt-4 text-2xl font-medium tracking-[-0.03em]">
+              <h3 className="mt-4 text-[26px] font-medium tracking-[-0.03em]">
                 공간에 맞는 새로운 가치
               </h3>
 
-              <p className="mt-5 max-w-[350px] text-sm leading-7 text-neutral-500">
+              <p className="mt-5 max-w-[350px] text-[15px] leading-7 text-neutral-500">
                 주거부터 상업공간까지 각 공간의 특성을 살려
                 새로운 경험과 가치를 만들어갑니다.
               </p>
@@ -200,7 +204,7 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
 
             <div className="lg:col-span-3">
-              <p className="text-xs tracking-[4px] text-neutral-500">
+              <p className="text-xs tracking-[4px] text-neutral-600">
                 사업분야
               </p>
             </div>
@@ -229,13 +233,13 @@ export default function Home() {
               </div>
 
               <div className="mt-6 border-t border-black/20 pt-6">
-                <p className="text-xs text-neutral-400">01</p>
+                <p className="text-sm text-neutral-500">01</p>
 
-                <h3 className="mt-4 text-[clamp(26px,3vw,40px)] font-medium tracking-[-0.04em]">
+                <h3 className="mt-4 text-[28px] font-medium tracking-[-0.04em]">
                   인테리어 디자인
                 </h3>
 
-                <p className="mt-4 max-w-[480px] text-sm leading-7 text-neutral-500">
+                <p className="mt-4 max-w-[480px] text-[15px] leading-7 text-neutral-500">
                   공간의 목적과 사용자의 동선을 분석해
                   공간에 가장 적합한 디자인 방향을 제안합니다.
                 </p>
@@ -255,13 +259,13 @@ export default function Home() {
               </div>
 
               <div className="mt-6 border-t border-black/20 pt-6">
-                <p className="text-xs text-neutral-400">02</p>
+                <p className="text-sm text-neutral-500">02</p>
 
-                <h3 className="mt-4 text-[clamp(26px,3vw,40px)] font-medium tracking-[-0.04em]">
+                <h3 className="mt-4 text-[28px] font-medium tracking-[-0.04em]">
                   인테리어 시공
                 </h3>
 
-                <p className="mt-4 max-w-[480px] text-sm leading-7 text-neutral-500">
+                <p className="mt-4 max-w-[480px] text-[15px] leading-7 text-neutral-500">
                   설계부터 현장 관리와 마감까지
                   체계적인 프로세스로 공간을 완성합니다.
                 </p>
@@ -275,19 +279,19 @@ export default function Home() {
       </section>
 
       {/* 소식 */}
-      <section id="news" className="py-24 md:py-32 lg:py-40">
+      <section id="news" className="py-20 md:py-24 lg:py-28">
         <div className="mx-auto max-w-[1600px] px-5 md:px-8 lg:px-12">
 
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
 
             <div className="lg:col-span-3">
-              <p className="text-xs tracking-[4px] text-neutral-500">
+              <p className="text-xs tracking-[4px] text-neutral-600">
                 소식
               </p>
             </div>
 
             <div className="lg:col-span-9">
-              <h2 className="text-[clamp(36px,4.6vw,68px)] font-medium leading-[1.1] tracking-[-0.045em]">
+              <h2 className="text-[clamp(40px,5vw,72px)] font-medium leading-[1.08] tracking-[-0.045em]">
                 DBRIDGE의
                 <br />
                 새로운 소식
@@ -296,7 +300,7 @@ export default function Home() {
 
           </div>
 
-          <div className="mt-20 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-3">
+          <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-3">
 
             {news.map((item) => (
               <Link
@@ -305,6 +309,7 @@ export default function Home() {
                 data-cursor-hover
                 className="group block border-t border-black/20 pt-6"
               >
+
                 <div className="flex items-center justify-between">
 
                   <p className="text-xs text-neutral-400">
@@ -336,12 +341,12 @@ export default function Home() {
 
           </div>
 
-          <div className="mt-14 flex justify-end">
+          <div className="mt-12 flex justify-end">
 
             <Link
               href="/news"
               data-cursor-hover
-              className="inline-flex items-center gap-4 border-b border-black pb-2 text-sm"
+              className="inline-flex items-center gap-4 border-b border-black pb-2 text-[15px]"
             >
               소식 전체보기
               <span>→</span>

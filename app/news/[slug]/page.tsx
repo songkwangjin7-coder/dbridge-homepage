@@ -46,24 +46,26 @@ export default async function NewsDetail({
     <main className="bg-white text-[#111]">
 
       {/* 상단 */}
-      <section className="pt-20 md:pt-28 lg:pt-32">
-        <div className="mx-auto max-w-[1600px] px-5 md:px-8 lg:px-12">
+      <section className="pt-16 md:pt-20 lg:pt-24">
 
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-8 lg:px-12">
 
-            <div className="lg:col-span-3">
-              <p className="text-xs tracking-[3px] text-neutral-400">
-                {news.category}
-              </p>
-            </div>
+          {/* 제목 영역 */}
+          <div className="relative">
 
-            <div className="lg:col-span-9">
+            {/* 카테고리 */}
+            <p className="mb-8 text-xs tracking-[3px] text-neutral-500 lg:absolute lg:left-0 lg:top-4 lg:mb-0">
+              {news.category}
+            </p>
 
-              <h1 className="max-w-[1000px] text-[clamp(38px,5vw,72px)] font-medium leading-[1.08] tracking-[-0.045em]">
+            {/* 제목 + 날짜 중앙 정렬 */}
+            <div className="text-center">
+
+              <h1 className="mx-auto max-w-[1100px] text-[clamp(46px,5.5vw,82px)] font-medium leading-[1.05] tracking-[-0.05em]">
                 {news.title}
               </h1>
 
-              <p className="mt-8 text-sm text-neutral-400">
+              <p className="mt-7 text-sm text-neutral-400">
                 {news.date}
               </p>
 
@@ -72,7 +74,7 @@ export default async function NewsDetail({
           </div>
 
           {/* 대표 이미지 */}
-          <div className="mt-20 aspect-[16/7] bg-[#f1f1ef]">
+          <div className="mt-16 aspect-[16/7] bg-[#f1f1ef]">
 
             <div className="flex h-full items-center justify-center text-sm text-neutral-400">
               소식 대표 이미지
@@ -81,38 +83,45 @@ export default async function NewsDetail({
           </div>
 
         </div>
+
       </section>
 
       {/* 본문 */}
-      <section className="py-20 md:py-28">
+      <section className="py-16 md:py-20 lg:py-24">
 
-        <div className="mx-auto grid max-w-[1600px] grid-cols-1 px-5 md:px-8 lg:grid-cols-12 lg:px-12">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-8 lg:px-12">
 
-          <div className="lg:col-start-4 lg:col-span-7">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
 
-            <p className="text-base leading-8 text-neutral-600 md:text-lg md:leading-9">
-              {news.description}
-            </p>
+            {/* 본문 전체 중앙 배치 */}
+            <div className="lg:col-start-3 lg:col-span-8">
 
-            {/* 본문 이미지 */}
-            <div className="mt-16 aspect-[16/10] bg-[#f1f1ef]">
+              <p className="text-base leading-8 text-neutral-600 md:text-lg md:leading-9">
+                {news.description}
+              </p>
 
-              <div className="flex h-full items-center justify-center text-sm text-neutral-400">
-                본문 이미지
+              {/* 본문 이미지 */}
+              <div className="mt-14 aspect-[16/9] bg-[#f1f1ef]">
+
+                <div className="flex h-full items-center justify-center text-sm text-neutral-400">
+                  본문 이미지
+                </div>
+
               </div>
 
-            </div>
+              {/* 목록으로 */}
+              <div className="mt-14 border-t border-black/20 pt-7">
 
-            {/* 목록으로 */}
-            <div className="mt-16 border-t border-black/20 pt-8">
+                <Link
+                  href="/news"
+                  data-cursor-hover
+                  className="inline-flex items-center gap-3 text-sm"
+                >
+                  <span>←</span>
+                  <span>소식 목록으로</span>
+                </Link>
 
-              <Link
-                href="/#news"
-                data-cursor-hover
-                className="inline-block text-sm"
-              >
-                ← 소식 목록으로
-              </Link>
+              </div>
 
             </div>
 
