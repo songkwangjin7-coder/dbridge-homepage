@@ -41,7 +41,7 @@ export default function ProjectGallery({
     return () => clearInterval(timer);
   }, [imageCount]);
 
-  /* 현재 이미지에 맞춰 아래 썸네일도 자동 이동 */
+  /* 현재 이미지에 맞춰 썸네일 자동 이동 */
   useEffect(() => {
     thumbnailRefs.current[current]?.scrollIntoView({
       behavior: "smooth",
@@ -66,7 +66,7 @@ export default function ProjectGallery({
           onClick={prevImage}
           data-cursor-hover
           aria-label="이전 이미지"
-          className="absolute left-4 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-base shadow-sm md:left-5 md:h-9 md:w-9 md:text-lg"
+          className="absolute left-4 top-1/2 -translate-y-1/2 text-base text-[#111] transition-transform duration-200 hover:-translate-x-1 md:left-5 md:text-lg"
         >
           ‹
         </button>
@@ -77,13 +77,13 @@ export default function ProjectGallery({
           onClick={nextImage}
           data-cursor-hover
           aria-label="다음 이미지"
-          className="absolute right-4 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-base shadow-sm md:right-5 md:h-9 md:w-9 md:text-lg"
+          className="absolute right-4 top-1/2 -translate-y-1/2 text-base text-[#111] transition-transform duration-200 hover:translate-x-1 md:right-5 md:text-lg"
         >
           ›
         </button>
 
         {/* 페이지 번호 */}
-        <div className="absolute bottom-4 right-4 rounded-full bg-black/70 px-4 py-2 text-xs text-white md:bottom-5 md:right-5">
+        <div className="absolute bottom-4 right-4 rounded-full bg-black/70 px-3 py-1.5 text-[10px] text-white md:bottom-5 md:right-5 md:text-[11px]">
           {String(current + 1).padStart(2, "0")} /{" "}
           {String(imageCount).padStart(2, "0")}
         </div>
@@ -117,7 +117,6 @@ export default function ProjectGallery({
 
             </div>
 
-            {/* 현재 선택된 이미지 */}
             {current === index && (
               <div className="absolute bottom-0 left-0 h-[3px] w-full bg-black" />
             )}
