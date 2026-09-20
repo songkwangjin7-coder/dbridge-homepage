@@ -16,6 +16,7 @@ export default function CommercialPage() {
       <section className="py-20 md:py-24 lg:py-28">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8 lg:px-12">
 
+          {/* 상단 */}
           <div className="mb-16 md:mb-20">
             <p className="text-xs tracking-[4px] text-neutral-500">
               시공사례
@@ -30,6 +31,7 @@ export default function CommercialPage() {
             </p>
           </div>
 
+          {/* 상업공간 카테고리 */}
           <div className="grid grid-cols-1 border-t border-black/20 md:grid-cols-2">
             {categories.map((category, index) => (
               <Link
@@ -37,11 +39,11 @@ export default function CommercialPage() {
                 href={`/projects/commercial/${category.slug}`}
                 data-cursor-hover
                 className={[
-                  "group flex min-h-[160px] items-center justify-between border-b border-black/20 p-6 md:min-h-[220px] md:p-9 lg:p-10",
+                  "group flex min-h-[150px] items-center justify-between border-b border-black/20 px-6 py-8 md:min-h-[220px] md:px-9 lg:px-10",
                   index % 2 === 0 ? "md:border-r" : "",
                 ].join(" ")}
               >
-                <h2 className="text-[clamp(28px,2.5vw,38px)] font-medium tracking-[-0.04em]">
+                <h2 className="text-[28px] font-medium tracking-[-0.04em] md:text-[34px] lg:text-[38px]">
                   {category.name}
                 </h2>
 
