@@ -17,7 +17,7 @@ export default function CommercialPage() {
         <div className="mx-auto max-w-[1400px] px-5 md:px-8 lg:px-12">
 
           {/* 상단 */}
-          <div className="mb-16 md:mb-20">
+          <div className="mb-14 md:mb-16 lg:mb-20">
             <p className="text-xs tracking-[4px] text-neutral-500">
               시공사례
             </p>
@@ -31,25 +31,36 @@ export default function CommercialPage() {
             </p>
           </div>
 
-          {/* 상업공간 카테고리 */}
-          <div className="grid grid-cols-1 border-t border-black/20 md:grid-cols-2">
-            {categories.map((category, index) => (
+          {/* 카테고리 */}
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
+            {categories.map((category) => (
               <Link
                 key={category.slug}
                 href={`/projects/commercial/${category.slug}`}
                 data-cursor-hover
-                className={[
-                  "group flex min-h-[150px] items-center justify-between border-b border-black/20 px-6 py-8 md:min-h-[220px] md:px-9 lg:px-10",
-                  index % 2 === 0 ? "md:border-r" : "",
-                ].join(" ")}
+                className="group relative block aspect-[4/3] overflow-hidden bg-[#e9e9e7] md:aspect-[16/10]"
               >
-                <h2 className="text-[28px] font-medium tracking-[-0.04em] md:text-[34px] lg:text-[38px]">
-                  {category.name}
-                </h2>
+                {/* 대표 이미지 영역 */}
+                <div className="absolute inset-0 flex items-center justify-center text-xs text-neutral-400">
+                  대표 이미지
+                </div>
 
-                <span className="text-[30px] leading-none text-neutral-500 transition-transform duration-300 group-hover:translate-x-2">
-                  →
-                </span>
+                {/* 기본 하단 음영 */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
+
+                {/* 마우스 호버 음영 */}
+                <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/35" />
+
+                {/* 텍스트 */}
+                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 md:p-7 lg:p-8">
+                  <h2 className="text-[28px] font-medium tracking-[-0.04em] text-white md:text-[32px] lg:text-[36px]">
+                    {category.name}
+                  </h2>
+
+                  <span className="text-[30px] leading-none text-white transition-transform duration-300 group-hover:translate-x-2">
+                    →
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
